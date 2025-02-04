@@ -1,6 +1,7 @@
 import entity.Usuario;
 import model.AtualizaUsuario;
 import model.CadastroUsuario;
+import model.DeletaUsuario;
 
 public class App {
     public static void main(String[] args) {
@@ -8,17 +9,24 @@ public class App {
 //        DatabaseConnection.getConnection();
 //        DatabaseConnection.testConnection();
         Usuario usuario = new Usuario();
+        usuario.setEmail("daniel@gmail.com");
         usuario.setNome("Daniel");
-        usuario.setPeso(96.0);
-        usuario.setAltura(1.8);
-        usuario.setIdade(26.0);
-        usuario.setSexo('H');
-//        CadastroUsuario cadastroUsuario = new CadastroUsuario();
-//        cadastroUsuario.insertUser(usuario);
-        AtualizaUsuario atualizaUsuario = new AtualizaUsuario();
-        atualizaUsuario.updateUser(usuario);
+        //Deleting user
+        DeletaUsuario deletaUsuario = new DeletaUsuario();
+        deletaUsuario.deleteUser(usuario);
+//        usuario.setNome("Guilherme");
+//        usuario.setPeso(85.0);
+//        usuario.setAltura(1.75);
+//        usuario.setIdade(16.0);
+//        usuario.setEmail("guilherme@gmail.com");
+//        usuario.setSexo('M');
 
         System.out.println("Executando consulta no banco...");
+//        CadastroUsuario cadastroUsuario = new CadastroUsuario();
+//        cadastroUsuario.insertUser(usuario);
+//        AtualizaUsuario atualizaUsuario = new AtualizaUsuario();
+//        atualizaUsuario.updateUser(usuario);
+
 //        DatabaseConnection.executeQuery();
 //        DatabaseConnection.closeConnection();
 

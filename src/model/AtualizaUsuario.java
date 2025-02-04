@@ -1,7 +1,7 @@
 package model;
 
 import entity.Usuario;
-import util.DatabaseConnection;
+import controller.DatabaseConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class AtualizaUsuario {
     int userID = 1;
-    private final String UPDATE_SQL = "UPDATE usuarios SET nome = ?,peso = ?,altura = ?,idade = ? WHERE id = ?";
+    private final String UPDATE_SQL = "UPDATE usuarios SET nome = ?,peso = ?,altura = ?,idade = ?, email = ? WHERE id = ?";
     public void updateUser(Usuario usuario){
         try (Connection conn = DatabaseConnection.getConnection()){
             PreparedStatement stmt = conn.prepareStatement(UPDATE_SQL);
@@ -17,7 +17,8 @@ public class AtualizaUsuario {
             stmt.setDouble(2, usuario.getPeso());
             stmt.setDouble(3, usuario.getAltura());
             stmt.setDouble(4, usuario.getIdade());
-            stmt.setInt(5,userID);
+            stmt.setString(5, usuario.getEmail());
+            stmt.setInt(6,userID);
             stmt.executeUpdate();
 
 

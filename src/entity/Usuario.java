@@ -7,6 +7,9 @@ public class Usuario {
     private double altura;
     private double idade;
     private char sexo;
+    private String email;
+
+
 
 
     public int getId() {
@@ -55,6 +58,13 @@ public class Usuario {
 
     public void setSexo(char sexo) {
         this.sexo = sexo;
+    }
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 
