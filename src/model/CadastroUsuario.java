@@ -7,9 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class UsuarioDAO {
+public class CadastroUsuario {
     private final String INSERT_SQL = "INSERT INTO usuarios (nome, peso, altura, idade, sexo) VALUES (?,?,?,?,?)";
-    private final String SELECT_SQL = "SELECT * FROM usuario";
+//    private final String SELECT_SQL = "SELECT * FROM usuario";
 //    Usuario usuario = new Usuario();
 
     public void insertUser(Usuario usuario) {
