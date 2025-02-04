@@ -3,12 +3,12 @@ package util;
 import java.sql.*;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:mysql://localhost:3306/'your_database'"; //altere para o seu banco
+    private static final String URL = "jdbc:mysql://localhost:3306/easy_fit"; //altere para o seu banco
     private static final String USER = "root";
-    private static final String PASSWORD = " ";// Coloque a senha do seu banco
+    private static final String PASSWORD = "";// Coloque a senha do seu banco
 
     private static Connection conn;
-    /* Resumindo o códiggo o getConnection vai fazer a conexão, o metodo testConnection
+    /* Resumindo o código o getConnection vai fazer a conexão, o metodo testConnection
      vai usar o getConnection para testar se a conexão está ativa,
      e o closeConnection vai fechar a conexão */
 
@@ -53,7 +53,7 @@ public class DatabaseConnection {
 
         }
         public static void executeQuery() {
-            String sql = "SELECT * FROM sua_tabela";  // Altere "sua_tabela" para o nome correto
+            String sql = "SELECT * FROM usuario";  // Altere "sua_tabela" para o nome correto
 
             try (Connection conn = getConnection();
                  Statement stmt = conn.createStatement();
@@ -63,8 +63,8 @@ public class DatabaseConnection {
                     // Suponha que a tabela tenha colunas id e nome
                     int id = rs.getInt("id");
                     String nome = rs.getString("nome");
-
-                    System.out.println("ID: " + id + ", Nome: " + nome);
+                    String email = rs.getString("email");
+                    System.out.println("ID: " + id + ", Nome: " + nome + " Email: " + email);
                 }
 
             } catch (SQLException e) {
